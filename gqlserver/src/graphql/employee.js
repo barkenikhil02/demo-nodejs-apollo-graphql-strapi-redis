@@ -14,4 +14,9 @@ module.exports = {
     // resolver: (parent,args,context,info) <- options params
     tasks: (_,__,context) => context.dataSources.tasks.getByEmpId(_.id)
   },
+
+  Department: {
+    departments: (_,__,context) => context.dataSources.employees.get(),
+    department: (_,{ dept_id },context) => context.dataSources.employees.getById(dept_id) || new NotFoundError(),
+  }
 }
