@@ -27,6 +27,10 @@
     "tasks": {
       "collection": "task",
       "via": "employee"
+    },
+    "dept_id": {
+      "via": "emps",
+      "model": "department"
     }
   }
 }
